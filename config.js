@@ -1,8 +1,8 @@
-var mongo_uri = ENV['MONGODB_URI']
+var mongo_uri = ENV['MONGODB_URI']+ '/heroku_q0gfjhf3';
 var config = {
     frontend: 'http://localhost:3000/',
     mongo: {
-        url: mongo_uri+ `/heroku_q0gfjhf3`
+        url: mongo_uri
     },
     passport: {
         secret:' dJkre98LopwqE1'//for jwt token
