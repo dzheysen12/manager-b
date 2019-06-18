@@ -1,0 +1,7 @@
+/nbproject/private/
+/nbproject
+/.idea
+/node_modules
+/uploads
+*.log
+npm-debug.log*
