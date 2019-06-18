@@ -1,14 +1,11 @@
 var mongoose = require('mongoose');
 var config = require('../config.js');
-
-var MONGODB_URI = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost", // Make sure to replace that URI with the one provided by MongoLab
-  db,
-  users;
-
-var db = mongoose.connect(MONGODB_URI, {
+var db = mongoose.connect(config.mongo.url, {
     useMongoClient: true,
     /* other options */
 });
+
+console.log(config.mongo.url);
 
 db.on('error', console.error.bind(console, 'Mongo connection error:'));
 

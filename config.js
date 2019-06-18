@@ -1,7 +1,8 @@
+var mongo_uri = ENV['MONGODB_URI']
 var config = {
     frontend: 'http://localhost:3000/',
     mongo: {
-        url: 'mongodb://localhost:27017/ai_bots'
+        url: mongo_uri+ `/heroku_q0gfjhf3`
     },
     passport: {
         secret:' dJkre98LopwqE1'//for jwt token
