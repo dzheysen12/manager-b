@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 var config = require('../config.js');
-var db = mongoose.connect(config.mongo.url, {
+
+var newd =  mongo_uri = ENV['MONGODB_URI'];
+
+var db = mongoose.connect(newd, {
     useMongoClient: true,
     /* other options */
 });
