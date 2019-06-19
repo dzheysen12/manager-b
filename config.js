@@ -1,7 +1,7 @@
 var mongo_uri = ENV['MONGODB_URI']+ '/heroku_q0gfjhf3';
 var config = {
     frontend: 'http://localhost:3000/',
-  
+
     passport: {
         secret:' dJkre98LopwqE1'//for jwt token
     },

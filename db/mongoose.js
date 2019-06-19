@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var config = require('../config.js');
 
-var newd =  mongo_uri = ENV['mongodb://eduardworrk@gmail.com:shapa060708Рx1@ds337377.mlab.com:37377/heroku_q0gfjhf3'];
+var newd =  mongo_uri = ENV['mongodb://eduardworrk@gmail.com:shapa060708Рx1@ds119738.mlab.com:19738/heroku_1sl1m4q3'];
 
 var db = mongoose.connect(newd, {
     useMongoClient: true,
