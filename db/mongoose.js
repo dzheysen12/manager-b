@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var config = require('../config.js');
-var db = mongoose.connect("mongodb://eduardworrk@gmail.com:shapa060708Рx1@ds119738.mlab.com:19738/heroku_1sl1m4q3", {
+var db = mongoose.connect("mongodb://Vasya12345:Vasya12345@ds119738.mlab.com:19738/heroku_1sl1m4q3", {
     useMongoClient: true,
     /* other options */
 });
