@@ -614,7 +614,7 @@ router.post('/send_message', function (req, res, next) {
         log(log_error(util.inspect(err)));
         res.json(my.createResponse(904));
     });
-
+    
     function dialogflowCall() {
         var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
 
