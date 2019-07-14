@@ -37,6 +37,15 @@ var config = {
         //Google cloud messaging
         gcmKey: 'AAAAkJkGh1E:APA91bGRJK439NW3l3Mlqmyv_8VsrMdYGat9cdUbFSggHqq725RKWIpRXuh-' +
         '0xjUObochJZ95yIW1dVIfEDIgidulriuUYBxUuV7yVxD6g6j9KbKLN-wuWvaRO8--qQrXTcA6Jnza9qv'
+    },
+    Yandex: {
+        Payment: {
+            Api: 'https://payment.yandex.net/api/v3/payments',
+            Test: false,
+            ShopId: '177433',
+            Password: 'tvergOf4tMK6PXWE',
+            Scid: '717597'
+        }
     }
 };
 
