@@ -83,7 +83,8 @@ router.post('/add', function(req, res, next) {
         bot: 'ObjectId',
         employee: 'ObjectId',
         user: 'ObjectId',
-        sessionId: 'string'
+        sessionId: 'string',
+        discription: 'string'
     });
 
     if (validateError) {
@@ -94,7 +95,8 @@ router.post('/add', function(req, res, next) {
         name: q.name,
         time: q.time,
         contacts: q.contacts,
-        service: q.service
+        service: q.service,
+        description: q.description
     });
     my.checkOptionalParams(newCRMorder, q, ['bot', 'employee', 'sessionId']);
 
@@ -176,14 +178,15 @@ router.post('/edit', function(req, res, next) {
         bot: 'ObjectId',
         employee: 'ObjectId',
         user: 'ObjectId',
-        sessionId: 'string'
+        sessionId: 'string',
+        description: 'string'
     });
 
     if (validateError) {
         return res.json(my.createResponse(904));
     }
 
-    var optionals = ['name', 'time', 'contacts', 'service'];
+    var optionals = ['name', 'time', 'contacts', 'service', 'description'];
 
     if (user.type != 'employee') {
         optionals = optionals.concat(['bot', 'employee', 'sessionId']);

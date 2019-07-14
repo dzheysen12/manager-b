@@ -24,7 +24,18 @@ var BotSchema = new Schema({
     employees: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-    }]
+    }],
+    buttonColor: {
+        type: String,
+        default: 'rgb(50, 59, 165)'
+    },
+    widgetColor: {
+        type: String,
+        default: 'rgb(50, 59, 165)'
+    },
+    title: {
+        type: String
+    },
 }, {
     timestamps: true
 });
