@@ -42,10 +42,7 @@ var CRMorderSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
-    },
-    description: {//комментарий к заказу
-      type: String
-  },
+    }
 }, {
     timestamps: true
 });

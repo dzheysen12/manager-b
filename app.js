@@ -40,7 +40,6 @@ var settings = require('./routes/settings');
 var tariff = require('./routes/tariff');
 var user = require('./routes/user');
 var webhook = require('./routes/webhook');
-var payment = require('./routes/payment');
 
 app.use('/bot', bot);
 app.use('/category', category);
@@ -53,7 +52,7 @@ app.use('/settings', settings);
 app.use('/tariff', tariff);
 app.use('/user', user);
 app.use('/webhook', webhook);
-app.use(config.Yandex.Payment.Test ? '/payment-test' : '/payment', payment);
+
 app.seed = function () {
     seed.setupAdmin(seed.setupSettings);
 };

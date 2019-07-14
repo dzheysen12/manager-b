@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../db/models/User.js');
-var Payment = require('../db/models/Payment.js');
 var Setting = require('../db/models/Setting.js');
 
 var passport = require('passport');
@@ -282,14 +281,6 @@ router.post('/activate', function(req, res, next) {
                 user.money -= activate_price.value;
                 user.activate = true;
                 my.trySaveMongoObj(user, res);
-
-                var payment = new Payment({
-                    Amount: activate_price.value,
-                    Type: 'Activate',
-                    Note: 'Активация аккаунта',
-                    User: user._id
-                });
-                payment.save();
             } else {
                 log(log_warning('На балансе нет достаточной суммы'));
                 res.json(my.createResponse(403));

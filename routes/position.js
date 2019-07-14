@@ -133,16 +133,11 @@ router.post('/edit', function(req, res, next) {
         name: 'string',
         description: 'string',
         services: 'array_of_ids',
-        services_is_empty: 'boolean',
         schedule: true
     });
 
     if (validateError) {
         return res.json(my.createResponse(904));
-    }
-
-    if (q.services_is_empty) {
-        q.services = [];
     }
 
     my.checkOptionalParams(position, q ,['name', 'description', 'services', 'schedule']);

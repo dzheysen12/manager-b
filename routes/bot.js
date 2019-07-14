@@ -61,11 +61,7 @@ router.post('/add', function(req, res, next) {
 
     var validateError = my.validateError(q, {
         name: 'string',
-        description: 'string',
-        employees: 'array_of_ids',
-        buttonColor: 'string',
-        widgetColor: 'string',
-        title: 'string',
+        description: 'string'
     });
 
     if (validateError) {
@@ -77,8 +73,6 @@ router.post('/add', function(req, res, next) {
         description: q.description,
         user: user._id
     });
-
-    my.checkOptionalParams(newBot, q ,['employees', 'buttonColor', 'widgetColor', 'title']);
 
     my.trySaveMongoObj(newBot, res);
 });
@@ -120,22 +114,14 @@ router.post('/edit', function(req, res, next) {
     var validateError = my.validateError(q, {
         name: 'string',
         description: 'string',
-        employees: 'array_of_ids',
-        buttonColor: 'string',
-        widgetColor: 'string',
-        title: 'string',
-        employees_is_empty: 'boolean',
+        employees: 'array_of_ids'
     });
 
     if (validateError) {
         return res.json(my.createResponse(904));
     }
 
-    if (q.employees_is_empty) {
-        q.employees = [];
-    }
-
-    my.checkOptionalParams(bot, q ,['name', 'description', 'employees', 'buttonColor', 'widgetColor', 'title']);
+    my.checkOptionalParams(bot, q ,['name', 'description', 'employees']);
 
     my.trySaveMongoObj(bot, res);
 });
